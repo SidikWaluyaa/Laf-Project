@@ -556,12 +556,18 @@
                 </svg>
                 Riwayat Masuk
             </a>
-            <a href="{{ route('penjualan.index') }}" class="{{ request()->routeIs('penjualan.*') ? 'active' : '' }}">
+            <a href="{{ route('penjualan.index') }}" class="{{ request()->routeIs('penjualan.index') || request()->routeIs('penjualan.create') ? 'active' : '' }}">
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                 </svg>
-                Penjualan
+                Penjualan (Kasir)
+            </a>
+            <a href="{{ route('penjualan.import-shopee') }}" class="{{ request()->routeIs('penjualan.import-shopee') ? 'active' : '' }}">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+                </svg>
+                Import Shopee Excel
             </a>
             <a href="{{ route('purchase-order.index') }}"
                 class="{{ request()->routeIs('purchase-order.*') ? 'active' : '' }}">

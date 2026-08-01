@@ -69,6 +69,9 @@ Route::middleware(['auth'])->group(function () {
     Route::patch('penjualan/{id}/void', [PenjualanController::class, 'void'])->name('penjualan.void');
     Route::get('penjualan-riwayat', [PenjualanController::class, 'riwayat'])->name('penjualan.riwayat');
     Route::get('penjualan-riwayat/pdf', [PenjualanController::class, 'exportPdf'])->name('penjualan.riwayat.pdf');
+    Route::get('penjualan-import-shopee', [\App\Http\Controllers\ShopeeImportController::class, 'index'])->name('penjualan.import-shopee');
+    Route::post('penjualan-import-shopee', [\App\Http\Controllers\ShopeeImportController::class, 'process'])->name('penjualan.import-shopee.process');
+    Route::delete('penjualan-import-shopee/destroy-massal', [\App\Http\Controllers\ShopeeImportController::class, 'destroyMassal'])->name('penjualan.import-shopee.destroy-massal');
 
     // Purchase Order
     Route::resource('purchase-order', PurchaseOrderController::class);
